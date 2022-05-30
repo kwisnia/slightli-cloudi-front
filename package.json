@@ -12,10 +12,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "lodash": "^4.17.21",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-router-dom": "6"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.182",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
