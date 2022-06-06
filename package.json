@@ -8,8 +8,7 @@
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier \"src/**/*.{js,jsx,css,scss}\" --write",
     "compile": "tsc",
-    "preview": "vite preview",
-    "prepare": "husky install"
+    "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -34,7 +33,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
-    "husky": "^8.0.1",
     "prettier": "^2.6.2",
     "typescript": "^4.7.2",
     "vite": "^2.9.9"
