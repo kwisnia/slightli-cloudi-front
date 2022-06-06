@@ -49,7 +49,7 @@ function Preferences() {
       setWeekendUpdateDay(capitalize(preferences.data.weekendsReceivingWeekday));
       setWeekendUpdateTime(preferences.data.weekendsReceivingTime);
       const cities = await axios.get<City[]>(
-        `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/geo/1.0/reverse?lat=${preferences.data.latitude}&lon=${preferences.data.longitude}&limit=5&appid=05bc63e7aefbf35ff1cfc19d7258723c`,
+        `http://api.openweathermap.org/geo/1.0/reverse?lat=${preferences.data.latitude}&lon=${preferences.data.longitude}&limit=5&appid=05bc63e7aefbf35ff1cfc19d7258723c`,
       );
       setSelectedCity(cities.data[0]);
     };
@@ -62,13 +62,13 @@ function Preferences() {
         latitude: selectedCity?.lat,
         longitude: selectedCity?.lon,
         receivingWeekly: weeklyUpdate,
-        weeklyReceivingTime: weeklyUpdateTime,
-        weeklyReceivingWeekday: weeklyUpdateDay?.toUpperCase(),
+        weeklyReceivingTime: weeklyUpdateTime || '00:00',
+        weeklyReceivingWeekday: weeklyUpdateDay?.toUpperCase() || 'MONDAY',
         receivingDaily: dailyUpdate,
-        dailyReceivingTime: dailyUpdateTime,
+        dailyReceivingTime: dailyUpdateTime || '00:00',
         receivingWeekends: weekendUpdate,
-        weekendsReceivingTime: weekendUpdateTime,
-        weekendsReceivingWeekday: weekendUpdateDay?.toUpperCase(),
+        weekendsReceivingTime: weekendUpdateTime || '00:00',
+        weekendsReceivingWeekday: weekendUpdateDay?.toUpperCase() || 'FRIDAY',
         clothingRecommendation,
       });
     } catch (error) {

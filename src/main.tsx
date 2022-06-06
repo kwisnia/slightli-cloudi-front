@@ -8,7 +8,8 @@ import Login from './routes/Login';
 import Register from './routes/Register';
 import Preferences from './routes/Preferences';
 
-axios.defaults.baseURL = 'http://localhost:8080';
+axios.defaults.baseURL = 'https://slightli-cloudi.herokuapp.com';
+// axios.defaults.baseURL = 'http://localhost:8080';
 
 ReactDOM.render(
   <React.StrictMode>
